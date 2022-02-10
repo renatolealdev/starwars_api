@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:starwars_api/home.dart';
+import 'package:starwars_api/views/home.dart';
 
 class StarWarsApi extends StatefulWidget {
   StarWarsApi({Key? key}) : super(key: key);
