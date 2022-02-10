@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:starwars_api/store/application.store.dart';
+import 'package:starwars_api/views/edit_avatar.dart';
 import 'package:starwars_api/views/home.dart';
 
 class StarWarsApi extends StatefulWidget {
@@ -11,10 +15,20 @@ class StarWarsApi extends StatefulWidget {
 class _StarWarsApiState extends State<StarWarsApi> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "Star Wars API",
-      home: Home(),
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
+
+    return MultiProvider(
+      providers: [
+        Provider<Application>(create: (context) => Application()),
+        Provider<EditAvatar>(create: (context) => EditAvatar()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: "Star Wars API",
+        home: Home(),
+      ),
     );
   }
 }
