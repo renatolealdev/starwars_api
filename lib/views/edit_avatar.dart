@@ -11,10 +11,7 @@ class _EditAvatarState extends State<EditAvatar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Edição de avatar"),
-        centerTitle: true,
-      ),
+      body: Container(),
     );
   }
 }

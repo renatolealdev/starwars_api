@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:starwars_api/store/application.store.dart';
+import 'package:starwars_api/store/consult_api.store.dart';
 import 'package:starwars_api/views/edit_avatar.dart';
 import 'package:starwars_api/views/home.dart';
 
@@ -22,7 +23,7 @@ class _StarWarsApiState extends State<StarWarsApi> {
     return MultiProvider(
       providers: [
         Provider<Application>(create: (context) => Application()),
-        Provider<EditAvatar>(create: (context) => EditAvatar()),
+        Provider<ConsultApi>(create: (context) => ConsultApi()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

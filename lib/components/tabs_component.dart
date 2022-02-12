@@ -1,11 +1,13 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 
-class TabsComponent extends StatefulWidget {
+class TabComponent extends StatelessWidget {
   final String text;
   final IconData iconName;
   final Color color;
 
-  const TabsComponent({
+  const TabComponent({
     Key? key,
     required this.text,
     required this.iconName,
@@ -13,12 +15,33 @@ class TabsComponent extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _TabsComponentState createState() => _TabsComponentState();
-}
-
-class _TabsComponentState extends State<TabsComponent> {
-  @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(15),
+          topRight: Radius.circular(15),
+        ),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            iconName,
+            size: 20,
+            color: Colors.white,
+          ),
+          Text(
+            text,
+            style: TextStyle(
+                fontFamily: "Kanit",
+                fontSize: 15,
+                fontWeight: FontWeight.w300,
+                color: Colors.white),
+          ),
+        ],
+      ),
+    );
   }
 }

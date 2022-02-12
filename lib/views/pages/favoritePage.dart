@@ -11,7 +11,12 @@ class _FavoritePageState extends State<FavoritePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(),
+      body: Container(
+        color: Colors.blueGrey[800],
+        child: Center(
+          child: Text("Favoritos"),
+        ),
+      ),
     );
   }
 }

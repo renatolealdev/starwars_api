@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AvatarComponent extends StatefulWidget {
-  const AvatarComponent({ Key? key }) : super(key: key);
+  const AvatarComponent({Key? key}) : super(key: key);
 
   @override
   _AvatarComponentState createState() => _AvatarComponentState();
@@ -10,8 +10,13 @@ class AvatarComponent extends StatefulWidget {
 class _AvatarComponentState extends State<AvatarComponent> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return FittedBox(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Icon(
+          Icons.contacts_rounded,
+        ),
+      ),
     );
   }
 }

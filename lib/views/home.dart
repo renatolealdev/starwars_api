@@ -30,7 +30,6 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-
     const String text = "Site Oficial";
     final store = Provider.of<Application>(context);
 
@@ -67,6 +66,7 @@ class _HomeState extends State<Home> {
                               : Color(0xFF2B2B2B),
                           borderRadius: BorderRadius.circular(50),
                         ),
+
                         child: GestureDetector(
                           onTap: () {
                             pagesController.animateToPage(3,
@@ -93,7 +93,12 @@ class _HomeState extends State<Home> {
                       padding: EdgeInsets.all(1.0),
                       child: AvatarComponent(),
                     ),
-                    Container(
+                  ],
+                );
+              },
+            ),
+          ),
+          Container(
             height: heightavailable * 0.90,
             color: Color.fromARGB(255, 190, 216, 255),
             child: LayoutBuilder(
@@ -109,7 +114,7 @@ class _HomeState extends State<Home> {
                             height: constraints.maxHeight * 0.08,
                             width: (constraints.maxWidth) * (1 / 3),
                             child: GestureDetector(
-                              child: TabsComponent(
+                              child: TabComponent(
                                 text: "Filmes",
                                 iconName: Icons.movie_filter_rounded,
                                 color: (store.currentPageView == 0)
@@ -127,7 +132,7 @@ class _HomeState extends State<Home> {
                             height: constraints.maxHeight * 0.08,
                             width: (constraints.maxWidth) * (1 / 3),
                             child: GestureDetector(
-                              child: TabsComponent(
+                              child: TabComponent(
                                 text: "Personagens",
                                 iconName: Icons.recent_actors_rounded,
                                 color: (store.currentPageView == 1)
@@ -145,7 +150,7 @@ class _HomeState extends State<Home> {
                             height: constraints.maxHeight * 0.08,
                             width: (constraints.maxWidth) * (1 / 3),
                             child: GestureDetector(
-                              child: TabsComponent(
+                              child: TabComponent(
                                 text: "Favoritos",
                                 iconName: Icons.star_rounded,
                                 color: (store.currentPageView == 2)
@@ -181,11 +186,6 @@ class _HomeState extends State<Home> {
                   ),
                 ],
               ),
-            ),
-          ),
-                  ],
-                );
-              },
             ),
           ),
         ],
